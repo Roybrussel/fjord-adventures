@@ -3,9 +3,9 @@ const { Schema, model } = require("mongoose");
 const taskSchema = new Schema({
   title: String,
   description: String,
-  project: {
+  booking: {
     type: Schema.Types.ObjectId,
-    ref: "Project",
+    ref: "booking",
   },
 });
 

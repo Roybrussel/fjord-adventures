@@ -6,6 +6,7 @@ const userSchema = new Schema(
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    myBookings: [{ type: Schema.Types.ObjectId, ref: "booking" }],
   },
   {
     timestamps: true,
