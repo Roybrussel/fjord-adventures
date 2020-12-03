@@ -2,8 +2,8 @@ const { Router } = require("express");
 const mongoose = require("mongoose");
 const router = Router();
 
-const Project = require("../models/project.model");
-const Task = require("../models/task.model"); // <== !!!
+const Project = require("../models/booking.model");
+const Task = require("../models/activity.model"); // <== !!!
 
 /* POST - creates a new project */
 router.post("/projects", (req, res) => {

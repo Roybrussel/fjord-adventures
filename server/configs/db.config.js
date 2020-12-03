@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/server", {
+  .connect("mongodb://localhost/fjord-adventures-server", {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,

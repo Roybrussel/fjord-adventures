@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const mongoose = require("mongoose");
-const Task = require("../models/task.model");
-const Project = require("../models/project.model");
+const Task = require("../models/activity.model");
+const Project = require("../models/booking.model");
 
 const router = Router();
 
