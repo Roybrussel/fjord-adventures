@@ -43,15 +43,16 @@ router.post("/signup", (req, res) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     // Create a new user with incoming username & hashed password
-    const aNewUser = new User({
+    const NewUser = new User({
       firstName: firstName,
       lastName: lastName,
       email: email,
       password: hashPass,
+      myBookings: [],
     });
 
     // Attempt to save the new user to the database
-    aNewUser.save((err) => {
+    NewUser.save((err) => {
       // When/If any issues arise while saving the user to the database
       if (err) {
         res
@@ -62,28 +63,30 @@ router.post("/signup", (req, res) => {
 
       // Automatically log in user after sign up
       // .login() here is actually predefined passport method
-      req.login(aNewUser, (err) => {
+      req.login(NewUser, (err) => {
         if (err) {
           res.status(500).json({ message: "Login after signup went bad." });
           return;
+        } else {
         }
 
         // Send the user's information to the frontend
         // We can use also: res.status(200).json(req.user);
-        res.status(200).json(aNewUser);
+        res.status(200).json(NewUser);
       });
     });
   });
 });
 
 /* LOGIN ROUTE */
-router.post("/login", (req, res, next) => {
+router.post("/", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
     if (err) {
       res
         .status(500)
         .json({ message: "Something went wrong authenticating user" });
       return;
+    } else {
     }
 
     if (!theUser) {

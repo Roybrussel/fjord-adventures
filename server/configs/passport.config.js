@@ -18,24 +18,33 @@ passport.deserializeUser((userIdFromSession, cb) => {
 });
 
 passport.use(
-  new LocalStrategy((username, password, next) => {
-    User.findOne({ username }, (err, foundUser) => {
-      if (err) {
-        next(err);
-        return;
-      }
+  new LocalStrategy(
+    {
+      usernameField: "email",
+      passwordField: "password",
+    },
+    (email, password, next) => {
+      User.findOne({
+        email,
+      })
+        .then((user) => {
+          if (!user) {
+            return next(null, false, {
+              errorMessage: "This email address has not been registered yet.",
+            });
+          }
 
-      if (!foundUser) {
-        next(null, false, { message: "Incorrect username." });
-        return;
-      }
+          if (!bcrypt.compareSync(password, user.hashPass)) {
+            return next(null, false, {
+              errorMessage: "Please check you password.",
+            });
+          }
 
-      if (!bcrypt.compareSync(password, foundUser.password)) {
-        next(null, false, { message: "Incorrect password." });
-        return;
-      }
-
-      next(null, foundUser);
-    });
-  })
+          next(null, user);
+        })
+        .catch((err) => next(err));
+    }
+  )
 );
+
+module.export = passport;
