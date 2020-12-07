@@ -34,7 +34,7 @@ passport.use(
             });
           }
 
-          if (!bcrypt.compareSync(password, user.hashPass)) {
+          if (!bcrypt.compareSync(password, user.password)) {
             return next(null, false, {
               errorMessage: "Please check you password.",
             });
@@ -47,4 +47,4 @@ passport.use(
   )
 );
 
-module.export = passport;
+module.exports = passport;

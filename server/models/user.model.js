@@ -7,6 +7,7 @@ const userSchema = new Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     myBookings: [{ type: Schema.Types.ObjectId, ref: "booking" }],
+    agent: { type: Boolean },
   },
   {
     timestamps: true,

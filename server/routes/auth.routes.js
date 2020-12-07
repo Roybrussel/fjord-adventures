@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 
 // require the user model !!!!
 const User = require("../models/user.model");
+const { json } = require("body-parser");
 
 /* SIGNUP ROUTE */
 router.post("/signup", (req, res) => {
@@ -49,6 +50,7 @@ router.post("/signup", (req, res) => {
       email: email,
       password: hashPass,
       myBookings: [],
+      agent: false,
     });
 
     // Attempt to save the new user to the database
@@ -82,9 +84,11 @@ router.post("/signup", (req, res) => {
 router.post("/", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
     if (err) {
-      res
-        .status(500)
-        .json({ message: "Something went wrong authenticating user" });
+      console.log(err);
+      res.status(500).json({
+        message: "Something went wrong authenticating user",
+        err: JSON.stringify(err),
+      });
       return;
     } else {
     }
