@@ -50,7 +50,7 @@ router.post("/signup", (req, res) => {
       email: email,
       password: hashPass,
       myBookings: [],
-      agent: false,
+      agent: true,
     });
 
     // Attempt to save the new user to the database

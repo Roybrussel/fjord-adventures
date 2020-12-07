@@ -1,12 +1,17 @@
 const { Schema, model } = require("mongoose");
 
-const taskSchema = new Schema({
-  title: String,
-  description: String,
-  booking: {
-    type: Schema.Types.ObjectId,
-    ref: "booking",
-  },
+const activitySchema = new Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  area: { type: String, required: true },
+  price: { type: Number, required: true },
+  imageUrl: { type: String, required: true },
+  bookings: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "booking",
+    },
+  ],
 });
 
-module.exports = model("Task", taskSchema);
+module.exports = model("Activity", activitySchema);

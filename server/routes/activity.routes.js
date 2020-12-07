@@ -2,18 +2,21 @@ const { Router } = require("express");
 const mongoose = require("mongoose");
 const router = Router();
 
-const Project = require("../models/booking.model");
-const Task = require("../models/activity.model"); // <== !!!
+const Activity = require("../models/activity.model");
+const Bookings = require("../models/booking.model"); // <== !!!
 
 /* POST - creates a new project */
-router.post("/projects", (req, res) => {
-  const { title, description } = req.body;
+router.post("/activity", (req, res) => {
+  const { title, description, area, price, imageUrl } = req.body;
 
-  Project.create({
+  Activity.create({
     title,
     description,
-    tasks: [],
-    owner: req.user._id, // Add this after finishing authentication
+    area,
+    price,
+    imageUrl,
+    bookings: [],
+    // Add this after finishing authentication
   })
     .then((response) => {
       res.status(200).json(response);
@@ -24,9 +27,9 @@ router.post("/projects", (req, res) => {
 });
 
 /* GET - retrieves all the projects from the database */
-router.get("/projects", (req, res) => {
-  Project.find()
-    .populate("tasks")
+router.get("/", (req, res) => {
+  Activity.find()
+    .populate("activities")
     .then((allTheProjects) => {
       res.status(200).json(allTheProjects);
     })
@@ -36,7 +39,7 @@ router.get("/projects", (req, res) => {
 });
 
 /* GET route => to get a specific project/detailed view */
-router.get("/projects/:id", (req, res) => {
+router.get("/activity/:id", (req, res) => {
   const { id } = req.params;
 
   // Check if the incoming id is a valid ObjectId type
@@ -48,7 +51,7 @@ router.get("/projects/:id", (req, res) => {
   // Our projects have array of tasks' ids and
   // we can use .populate() method to get the whole task objects
   Project.findById(id)
-    .populate("tasks")
+    .populate("bookings")
     .then((project) => {
       res.status(200).json(project);
     })
@@ -58,7 +61,7 @@ router.get("/projects/:id", (req, res) => {
 });
 
 /* PUT route => to update a specific project */
-router.put("/projects/:id", (req, res) => {
+router.put("/activity/:id", (req, res) => {
   const { id } = req.params;
 
   // Check if the incoming id is a valid ObjectId type
@@ -79,7 +82,7 @@ router.put("/projects/:id", (req, res) => {
 });
 
 // DELETE route => to delete a specific project
-router.delete("/projects/:id", (req, res) => {
+router.delete("/activity/:id", (req, res) => {
   const { id } = req.params;
 
   // Check if the incoming id is a valid ObjectId type
