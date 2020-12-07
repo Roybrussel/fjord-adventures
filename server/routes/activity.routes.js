@@ -6,7 +6,7 @@ const Activity = require("../models/activity.model");
 const Bookings = require("../models/booking.model"); // <== !!!
 
 /* POST - creates a new project */
-router.post("/activity", (req, res) => {
+router.post("/activities", (req, res) => {
   const { title, description, area, price, imageUrl } = req.body;
 
   Activity.create({
@@ -27,9 +27,9 @@ router.post("/activity", (req, res) => {
 });
 
 /* GET - retrieves all the projects from the database */
-router.get("/", (req, res) => {
+router.get("/activities", (req, res) => {
   Activity.find()
-    .populate("activities")
+    .populate("bookings")
     .then((allTheProjects) => {
       res.status(200).json(allTheProjects);
     })

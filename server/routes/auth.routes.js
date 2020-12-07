@@ -69,7 +69,6 @@ router.post("/signup", (req, res) => {
         if (err) {
           res.status(500).json({ message: "Login after signup went bad." });
           return;
-        } else {
         }
 
         // Send the user's information to the frontend
@@ -85,12 +84,10 @@ router.post("/", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
     if (err) {
       console.log(err);
-      res.status(500).json({
-        message: "Something went wrong authenticating user",
-        err: JSON.stringify(err),
-      });
+      res
+        .status(500)
+        .json.json({ message: "Something went wrong authenticating user" });
       return;
-    } else {
     }
 
     if (!theUser) {
@@ -121,7 +118,7 @@ router.post("/logout", (req, res) => {
 });
 
 /* LOGGEDIN */
-router.get("/loggedin", (req, res) => {
+router.get("/agentportal", (req, res) => {
   // req.isAuthenticated() is defined by passport
   if (req.isAuthenticated()) {
     res.status(200).json(req.user);
