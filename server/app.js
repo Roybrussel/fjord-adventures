@@ -72,5 +72,6 @@ app.use("/", require("./routes/index"));
 app.use("/", require("./routes/activity.routes"));
 app.use("/", require("./routes/task.routes"));
 app.use("/", require("./routes/auth.routes"));
+app.use("/", require("./routes/file-upload.routes"));
 
 module.exports = app;
