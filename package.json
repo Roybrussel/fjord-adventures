@@ -1,5 +1,5 @@
 {
-  "name": "mern-fullstacker",
+  "name": "fjord-adventures",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reMRKableDev/mern-fullstacker.git"
+    "url": "git+https://github.com/Roybrussel/fjord-adventures"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/reMRKableDev/mern-fullstacker/issues"
+    "url": "https://github.com/Roybrussel/fjord-adventures/issues"
   },
-  "homepage": "https://github.com/reMRKableDev/mern-fullstacker#readme"
+  "homepage": "https://github.com/Roybrussel/fjord-adventures#readme"
 }
