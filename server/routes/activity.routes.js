@@ -39,7 +39,7 @@ router.get("/activities", (req, res) => {
 });
 
 /* GET route => to get a specific project/detailed view */
-router.get("/activity/:id", (req, res) => {
+router.get("/activities/:id", (req, res) => {
   const { id } = req.params;
 
   // Check if the incoming id is a valid ObjectId type
@@ -50,8 +50,8 @@ router.get("/activity/:id", (req, res) => {
 
   // Our projects have array of tasks' ids and
   // we can use .populate() method to get the whole task objects
-  Project.findById(id)
-    .populate("bookings")
+  Activity.findById(id)
+    .populate("activities")
     .then((project) => {
       res.status(200).json(project);
     })
@@ -61,7 +61,7 @@ router.get("/activity/:id", (req, res) => {
 });
 
 /* PUT route => to update a specific project */
-router.put("/activity/:id", (req, res) => {
+router.put("/activities/:id", (req, res) => {
   const { id } = req.params;
 
   // Check if the incoming id is a valid ObjectId type
@@ -70,7 +70,7 @@ router.put("/activity/:id", (req, res) => {
     return;
   }
 
-  Project.findByIdAndUpdate(id, req.body)
+  Activity.findByIdAndUpdate(id, req.body)
     .then(() => {
       res.status(200).json({
         message: `Project with ${id} is updated successfully.`,
@@ -82,7 +82,7 @@ router.put("/activity/:id", (req, res) => {
 });
 
 // DELETE route => to delete a specific project
-router.delete("/activity/:id", (req, res) => {
+router.delete("/activities/:id", (req, res) => {
   const { id } = req.params;
 
   // Check if the incoming id is a valid ObjectId type
@@ -91,7 +91,7 @@ router.delete("/activity/:id", (req, res) => {
     return;
   }
 
-  Project.findByIdAndRemove(id)
+  Activity.findByIdAndRemove(id)
     .then(() => {
       res.status(200).json({
         message: `Project with ${id} is removed successfully.`,
