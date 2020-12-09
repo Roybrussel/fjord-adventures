@@ -13,13 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Roybrussel/fjord-adventures"
+    "url": "https://github.com/Roybrussel/fjord-adventures"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Roybrussel/fjord-adventures/issues"
+  },
+  "engines": {
+    "node": "12.18.4"
   },
   "homepage": "https://github.com/Roybrussel/fjord-adventures#readme"
 }
