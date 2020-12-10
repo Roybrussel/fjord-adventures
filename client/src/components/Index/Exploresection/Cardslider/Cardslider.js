@@ -4,7 +4,7 @@ import Explorecard from "./Explorecard/Explorecard";
 import ActivityService from "../../../../services/activity-service";
 
 function createCard(area) {
-  return <Explorecard image="images/geiranger.jpg" title={area.area} />;
+  return <Explorecard image={`images/${area.area}.jpg`} title={area.area} />;
 }
 
 const Cardslider = (props) => {
