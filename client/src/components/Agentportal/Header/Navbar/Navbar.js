@@ -33,6 +33,11 @@ const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-item agent-item">
+              <Link to="/add-agent" className="nav-link">
+                Add Agent
+              </Link>
+            </li>
+            <li className="nav-item agent-item">
               <Link to="/" className="nav-link">
                 Logout
               </Link>
