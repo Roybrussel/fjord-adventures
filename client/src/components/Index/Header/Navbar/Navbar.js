@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-// import DropdownButton from "react-bootstrap/DropdownButton";
-// import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 import AuthService from "../../../../services/auth-service";
 
@@ -73,7 +73,7 @@ const Navbar = (props) => {
                 Activities
               </a>
             </li>
-            {/* <DropdownButton id="dropdown-basic-button" title="Agent Login">
+            <DropdownButton id="dropdown-basic-button" title="Agent Login">
               <Form onSubmit={handleFormSubmit}>
                 <Form.Group>
                   <Form.Control
@@ -100,7 +100,7 @@ const Navbar = (props) => {
                   <span style={{ color: "red" }}>{loginErrorMsg}</span>
                 )}
               </Form>
-            </DropdownButton> */}
+            </DropdownButton>
           </ul>
         </div>
       </div>
