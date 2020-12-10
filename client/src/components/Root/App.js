@@ -19,7 +19,6 @@ class App extends Component {
     return (
       <div className="app">
         <Switch>
-          <Protectedroute path="/agentportal" component={Agentportal} />
           <Route exact path="/" component={Index} />
           <Route exact path="/agentportal" component={Agentportal} />
           <Route path="/activities" component={Activities} />
