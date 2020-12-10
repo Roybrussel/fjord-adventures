@@ -23,11 +23,6 @@ const Navbar = (props) => {
         <div className="navbar-nav">
           <ul className="navbar-nav">
             <li className="nav-item agent-item">
-              <Link to="/bookings" className="nav-link">
-                Bookings
-              </Link>
-            </li>
-            <li className="nav-item agent-item">
               <Link to="/activities" className="nav-link">
                 Activities
               </Link>

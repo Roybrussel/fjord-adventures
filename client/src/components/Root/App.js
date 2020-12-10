@@ -6,24 +6,27 @@ import Agentportal from "../Agentportal/Agentportal";
 import Activities from "../Agentportal/Activities/Activities";
 import Addagent from "../Agentportal/Addagent/Addagent";
 import Protectedroute from "../Protectedroute/Protectedroute";
-// import AuthService from "../../services/auth-service";
-
-// const service = new AuthService();
 
 class App extends Component {
-  // state = {
-  //   loggedInUser: {},
-  // };
+  state = {
+    loggedInUser: null,
+  };
+
+  getTheUser = (userObj) => {
+    this.setState({
+      loggedInUser: userObj,
+    });
+  };
 
   render() {
     return (
       <div className="app">
         <Switch>
           <Route exact path="/" component={Index} />
-          <Route exact path="/agentportal" component={Agentportal} />
           <Route path="/activities" component={Activities} />
           <Route path="/activities/:id" />
-          <Route path="/add-agent" component={Addagent} />
+          <Protectedroute exact path="/agentportal" component={Agentportal} />
+          <Protectedroute path="/add-agent" component={Addagent} />
           <Index />
         </Switch>
       </div>
