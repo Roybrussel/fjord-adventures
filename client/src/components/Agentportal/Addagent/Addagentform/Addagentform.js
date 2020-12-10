@@ -8,7 +8,6 @@ const initialState = { firstName: "", lastName: "", email: "", password: "" };
 
 const Addagentform = (props) => {
   const [regForm, setRegForm] = useState(initialState);
-  const [regErrorMsg, setRegErrorMsg] = useState("");
 
   const service = new AuthService();
 
@@ -16,18 +15,16 @@ const Addagentform = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const { username, password } = regForm;
+    const { firstName, lastName, email, password } = regForm;
 
     // Use the service.signup method to make a call to the back end and sign the user up
     service
-      .signup(username, password)
+      .signup(firstName, lastName, email, password)
       .then((response) => {
         setRegForm(initialState);
         props.getUser(response);
       })
       .catch((error) => {
-        const { message } = error.response.data;
-        setRegErrorMsg(message);
         console.log(error);
       });
   };
@@ -90,7 +87,6 @@ const Addagentform = (props) => {
           <Button variant="primary" type="submit" closeButton>
             Submit
           </Button>
-          {regErrorMsg && <span style={{ color: "red" }}>{regErrorMsg}</span>}
         </Form>
       </div>
     </div>

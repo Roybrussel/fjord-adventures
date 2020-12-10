@@ -5,7 +5,7 @@ import Index from "../Index/Index";
 import Agentportal from "../Agentportal/Agentportal";
 import Activities from "../Agentportal/Activities/Activities";
 import Addagent from "../Agentportal/Addagent/Addagent";
-// import Protectedroute from "../Protectedroute/Protectedroute";
+import Protectedroute from "../Protectedroute/Protectedroute";
 // import AuthService from "../../services/auth-service";
 
 // const service = new AuthService();
