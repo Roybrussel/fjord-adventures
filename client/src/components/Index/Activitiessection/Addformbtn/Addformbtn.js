@@ -59,6 +59,7 @@ function MyVerticallyCenteredModal(props) {
       .then(() => {
         props.getData();
         setFormState(initialState);
+        props.history.push("/");
       })
       .catch((error) => console.error(error));
   };
