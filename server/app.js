@@ -32,10 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://fjord-adventures.herokuapp.com/",
-    ],
+    origin: ["http://localhost:3000"],
     credentials: true,
   })
 );
@@ -43,7 +40,7 @@ app.use(
 // Session middleware
 app.use(
   session({
-    secret: "some secret goes here",
+    secret: process.env.SESS_SECRET,
     resave: true,
     saveUninitialized: true,
   })
@@ -77,6 +74,7 @@ app.use("/", require("./routes/task.routes"));
 app.use("/", require("./routes/auth.routes"));
 app.use("/", require("./routes/file-upload.routes"));
 
+// Setting up environments
 if (process.env.NODE_ENV === "production") {
   // set ability to get static values from client build folder
   // static files include all javascript and css files
