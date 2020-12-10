@@ -4,7 +4,7 @@ import Explorecard from "./Explorecard/Explorecard";
 import axios from "axios";
 
 function createCard(area) {
-  return <Explorecard image={`images/${area.area}.jpg`} title={area.area} />;
+  return <Explorecard image="images/geiranger.jpg" title={area.area} />;
 }
 
 const Cardslider = (props) => {
@@ -12,7 +12,9 @@ const Cardslider = (props) => {
 
   const getAllActivities = () => {
     axios
-      .get("http://localhost:9999/activities")
+      .get(`${process.env.REACT_APP_API_URL}/activities`, {
+        withCredentials: true,
+      })
       .then((responseFromApi) => {
         console.log(responseFromApi);
         setListOfActivities(responseFromApi.data);
@@ -21,7 +23,6 @@ const Cardslider = (props) => {
   };
 
   useEffect(getAllActivities, []);
-
   return (
     <div className="cards-container">
       <div className="row">{listOfActivities.map(createCard)}</div>

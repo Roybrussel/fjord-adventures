@@ -6,7 +6,6 @@ const myBookingSchema = new Schema(
     bookingNumber: Number,
     description: String,
     activities: [{ type: Schema.Types.ObjectId, ref: "Task" }],
-    party: { type: Schema.Types.ObjectId, ref: "User" }, // owner will be added later on
   },
   {
     timestamps: true,

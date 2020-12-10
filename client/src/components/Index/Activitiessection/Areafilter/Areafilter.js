@@ -13,7 +13,9 @@ const Areafilter = (props) => {
 
   const getAllActivities = () => {
     axios
-      .get("http://localhost:9999/activities")
+      .get(`${process.env.REACT_APP_API_URL}/activities`, {
+        withCredentials: true,
+      })
       .then((responseFromApi) => {
         console.log(responseFromApi);
         setListOfActivities(responseFromApi.data);
