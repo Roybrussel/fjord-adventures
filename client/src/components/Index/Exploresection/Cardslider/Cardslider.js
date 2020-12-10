@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Cardslider.css";
 import Explorecard from "./Explorecard/Explorecard";
-import axios from "axios";
+import ActivityService from "../../../../services/activity-service";
 
 function createCard(area) {
   return <Explorecard image="images/geiranger.jpg" title={area.area} />;
@@ -11,12 +11,11 @@ const Cardslider = (props) => {
   const [listOfActivities, setListOfActivities] = useState([]);
 
   const getAllActivities = () => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/activities`, {
-        withCredentials: true,
-      })
+    const service = new ActivityService();
+
+    service
+      .getActivities()
       .then((responseFromApi) => {
-        console.log(responseFromApi);
         setListOfActivities(responseFromApi.data);
       })
       .catch((error) => console.error(error));
