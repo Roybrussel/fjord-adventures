@@ -3,7 +3,6 @@ import "./Cardsection.css";
 import Activitiescard from "./Activitiescard/Activitiescard";
 import Addformbtn from "../Addformbtn/Addformbtn";
 import ActivityService from "../../../../services/activity-service";
-
 import Areafilter from "../Areafilter/Areafilter";
 
 function createCard(activity) {

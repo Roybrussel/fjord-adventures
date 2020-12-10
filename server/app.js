@@ -32,7 +32,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://fjord-adventures.herokuapp.com/",
+    ],
     credentials: true,
   })
 );
@@ -65,7 +68,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // default value for title local
-app.locals.title = "Express - Generated with IronGenerator";
+app.locals.title = "Fjord Adventures";
 
 // Routes Middleware
 app.use("/", require("./routes/index"));
