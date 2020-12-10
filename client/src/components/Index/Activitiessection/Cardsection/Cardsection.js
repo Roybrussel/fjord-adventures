@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Cardsection.css";
 import Activitiescard from "./Activitiescard/Activitiescard";
 import Addformbtn from "../Addformbtn/Addformbtn";
+import ActivityService from "../../../../services/activity-service";
+
 import Areafilter from "../Areafilter/Areafilter";
-import axios from "axios";
 
 function createCard(activity) {
   return (
@@ -20,17 +21,15 @@ const Cardsection = (props) => {
   const [listOfActivities, setListOfActivities] = useState([]);
 
   const getAllActivities = () => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/activities`, {
-        withCredentials: true,
-      })
+    const service = new ActivityService();
+
+    service
+      .getActivities()
       .then((responseFromApi) => {
-        console.log(responseFromApi);
         setListOfActivities(responseFromApi.data);
       })
       .catch((error) => console.error(error));
   };
-
   useEffect(getAllActivities, []);
 
   return (
