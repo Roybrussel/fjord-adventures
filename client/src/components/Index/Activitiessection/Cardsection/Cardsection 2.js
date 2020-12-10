@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Cardsection.css";
 import Activitiescard from "./Activitiescard/Activitiescard";
 import Addformbtn from "../Addformbtn/Addformbtn";
-import axios from "axios";
+import ActivityService from "../../../../services/activity-service";
 
 function createCard(activity) {
   return (
@@ -17,12 +17,14 @@ function createCard(activity) {
 const Cardsection = (props) => {
   const [listOfActivities, setListOfActivities] = useState([]);
 
+  // Function to help get all projects from the backend
   const getAllActivities = () => {
-    axios
-      .get("http://localhost:9999/activities")
+    const service = new ActivityService();
+
+    service
+      .getProjects()
       .then((responseFromApi) => {
-        console.log(responseFromApi);
-        setListOfActivities(responseFromApi.data);
+        setListOfProjects(responseFromApi.data);
       })
       .catch((error) => console.error(error));
   };

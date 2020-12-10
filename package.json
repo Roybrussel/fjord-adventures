@@ -1,7 +1,7 @@
 {
   "name": "fjord-adventures",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project #3 of Ironhack Bootcamp",
   "main": "index.js",
   "scripts": {
     "install-server": "npm install --prefix server",
@@ -13,16 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Roybrussel/fjord-adventures"
+    "url": "git+https://github.com/Roybrussel/fjord-adventures.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Roybrussel/fjord-adventures/issues"
-  },
-  "engines": {
-    "node": "12.18.4"
   },
   "homepage": "https://github.com/Roybrussel/fjord-adventures#readme"
 }
