@@ -1,0 +1,10 @@
+.reviews-container {
+    float: right;
+    padding-top: 10em;
+    margin-right: 2em;
+}
+
+.reviews-carousel {
+    width: 35em;
+    color: #f6f5f5;
+}

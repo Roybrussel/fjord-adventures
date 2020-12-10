@@ -1,0 +1,11 @@
+html {
+  height: 100%;
+  background-color: #f6f5f5;
+}
+
+hr {
+  height: 5px;
+  width: 20%;
+  border-radius: 25%;
+  background-color: #1f3c88;
+}

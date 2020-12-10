@@ -1,0 +1,9 @@
+.agent-navbar {
+    background-color: #ee6f57 !important;
+    position: absolute;
+}
+
+.agent-navbar-brand,
+.agent-item a {
+    color: #f6f5f5 !important;
+}

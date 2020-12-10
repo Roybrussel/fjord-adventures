@@ -1,0 +1,10 @@
+.activity-img {
+    height: 12em;
+    width: 100%;
+    border-radius: 0.3em;
+    object-fit: cover;
+}
+
+.description-text {
+    text-align: justify;
+}

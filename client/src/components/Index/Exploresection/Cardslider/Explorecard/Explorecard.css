@@ -1,0 +1,13 @@
+.explore-card-img-top {
+    height: 16em;
+    width: 16em;
+    object-fit: cover;
+    border-radius: 0.5em !important;
+    -webkit-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 46px -26px rgba(0, 0, 0, 0.75);
+}
+
+.explore-card-img-top:hover {
+    transform: scale(1.02);
+}

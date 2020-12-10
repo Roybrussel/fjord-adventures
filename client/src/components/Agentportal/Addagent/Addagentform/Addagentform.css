@@ -1,0 +1,9 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-agent-form {
+    width: 50%;
+    padding-top: 6em;
+}
