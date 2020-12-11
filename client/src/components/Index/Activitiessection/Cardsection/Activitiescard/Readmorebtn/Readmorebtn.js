@@ -40,7 +40,7 @@ function MyVerticallyCenteredModal(props) {
       .removeActivity(id)
       .then(() => {
         // after submitting the form, 'props.history.push' can be used to redirect to 'projects'
-        props.history.push("/");
+        props.onHide();
       })
       .catch((error) => console.error(error));
   };
@@ -53,45 +53,39 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              {details.title}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group>
-              <Image className="activity-img" src={details.imageUrl} alt="" />
-            </Form.Group>
-            <Form.Group>
-              <h6>Description</h6>
-              <p className="description-text">{details.description}</p>
-            </Form.Group>
-            <Form.Group>
-              <h6>Area</h6>
-              <p>{details.area}</p>
-            </Form.Group>
-            <Form.Group>
-              <h6>Price</h6>
-              <p>€ {details.price},- per person</p>
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary" type="submit">
-              Book
-            </Button>
-            <Button variant="primary" type="submit">
-              Edit
-            </Button>
-            <Button
-              variant="danger"
-              type="submit"
-              onClick={() => deleteActivity(details.id)}
-            >
-              Delete
-            </Button>
-          </Modal.Footer>
-        </Form>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            {details.title}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group>
+            <Image className="activity-img" src={details.imageUrl} alt="" />
+          </Form.Group>
+          <Form.Group>
+            <h6>Description</h6>
+            <p className="description-text">{details.description}</p>
+          </Form.Group>
+          <Form.Group>
+            <h6>Area</h6>
+            <p>{details.area}</p>
+          </Form.Group>
+          <Form.Group>
+            <h6>Price</h6>
+            <p>€ {details.price},- per person</p>
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" type="submit">
+            Book
+          </Button>
+          <Button variant="primary" type="submit">
+            Edit
+          </Button>
+          <Button variant="danger" onClick={() => deleteActivity()}>
+            Delete
+          </Button>
+        </Modal.Footer>
       </Modal>
     </div>
   );
@@ -112,7 +106,10 @@ const Readmorebtn = (props) => {
         <MyVerticallyCenteredModal
           show={modalShow}
           id={props.id}
-          onHide={() => setModalShow(false)}
+          onHide={() => {
+            setModalShow(false);
+            window.location.reload();
+          }}
         />
       </>
     </div>

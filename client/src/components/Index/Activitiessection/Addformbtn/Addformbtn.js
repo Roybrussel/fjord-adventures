@@ -57,9 +57,8 @@ function MyVerticallyCenteredModal(props) {
     service
       .createActivity({ title, description, area, price, imageUrl })
       .then(() => {
-        props.getData();
         setFormState(initialState);
-        props.history.push("/");
+        props.onHide();
       })
       .catch((error) => console.error(error));
   };
@@ -164,13 +163,18 @@ const Addformbtn = (props) => {
     <>
       <button
         className="btn btn-primary add-btn"
-        onClick={() => setModalShow(true)}
+        onClick={() => {
+          setModalShow(true);
+        }}
       >
         Add
       </button>
       <MyVerticallyCenteredModal
         show={modalShow}
-        onHide={() => setModalShow(false)}
+        onHide={() => {
+          setModalShow(false);
+          window.location.reload();
+        }}
       />
     </>
   );
