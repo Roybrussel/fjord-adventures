@@ -7,4 +7,5 @@ Fjord Adventures is a single-page Web application using the MERN stack (MongoDB,
 Ideas for further development:
 
 - Add shopping cart
-- Add user registration
+- Add user in session check/permissions
+- Add edit functionality to activities
