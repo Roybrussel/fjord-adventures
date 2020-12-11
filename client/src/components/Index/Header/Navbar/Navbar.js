@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -93,9 +94,11 @@ const Navbar = (props) => {
                     required
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                  Login
-                </Button>
+                <Link to="/agentportal">
+                  <Button variant="primary" type="submit">
+                    Login
+                  </Button>
+                </Link>
                 {loginErrorMsg && (
                   <span style={{ color: "red" }}>{loginErrorMsg}</span>
                 )}
