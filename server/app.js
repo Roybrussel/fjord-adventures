@@ -32,10 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://fjord-adventures.herokuapp.com/",
-    ],
+    origin: ["http://localhost:3000"],
     credentials: true,
   })
 );
@@ -73,20 +70,7 @@ app.locals.title = "Fjord Adventures";
 // Routes Middleware
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/activity.routes"));
-app.use("/", require("./routes/task.routes"));
 app.use("/", require("./routes/auth.routes"));
 app.use("/", require("./routes/file-upload.routes"));
-
-// Setting up environments
-if (process.env.NODE_ENV === "production") {
-  // set ability to get static values from client build folder
-  // static files include all javascript and css files
-  app.use(express.static("client/build"));
-
-  // get the index.html that will be rendered on the browser
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../client", "build", "index.html"));
-  });
-}
 
 module.exports = app;
