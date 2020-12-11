@@ -68,7 +68,6 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.locals.title = "Fjord Adventures";
 
 // Routes Middleware
-app.use("/", require("./routes/index"));
 app.use("/", require("./routes/activity.routes"));
 app.use("/", require("./routes/auth.routes"));
 app.use("/", require("./routes/file-upload.routes"));
