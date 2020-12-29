@@ -98,7 +98,7 @@ const Readmorebtn = (props) => {
     <div className="add-btn-container">
       <>
         <button
-          className="btn btn-primary add-btn"
+          className="btn btn-primary readmore-btn"
           onClick={() => setModalShow(true)}
         >
           Read more
