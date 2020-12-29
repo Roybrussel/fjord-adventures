@@ -1,50 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-
-import AuthService from "../../../../services/auth-service";
-
-const initialState = { email: "", password: "" };
 
 const Navbar = (props) => {
-  const [loginState, setLoginState] = useState(initialState);
-  const [loginErrorMsg, setLoginErrorMsg] = useState("");
-
-  const service = new AuthService();
-
-  // Function to handle form submit in the input fields
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-
-    const { email, password } = loginState;
-
-    service
-      .login(email, password)
-      .then((response) => {
-        setLoginState(initialState);
-        props.history.push("/agentportal");
-      })
-      .catch((error) => {
-        const { message } = error.response.data;
-        setLoginErrorMsg(message);
-        console.log(error);
-      });
-  };
-
-  // Function to handle changes in the input fields
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setLoginState({ ...loginState, [name]: value });
-  };
-
   return (
     <nav className="navbar navbar-expand-lg">
-      <a className="navbar-brand" href="/">
-        Fjord Adventures
-      </a>
+      <img
+        src="/images/fjordadventureslogo.png"
+        alt="logo-img"
+        className="navbar-logo navbar-brand"
+      />
       <button
         className="navbar-toggler"
         type="button"
@@ -74,36 +38,11 @@ const Navbar = (props) => {
                 Activities
               </a>
             </li>
-            <DropdownButton id="dropdown-basic-button" title="Agent Login">
-              <Form onSubmit={handleFormSubmit}>
-                <Form.Group>
-                  <Form.Control
-                    type="text"
-                    name="email"
-                    placeholder="Email Address"
-                    onChange={handleChange}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Control
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                    required
-                  />
-                </Form.Group>
-                <Link to="/agentportal">
-                  <Button variant="primary" type="submit">
-                    Login
-                  </Button>
-                </Link>
-                {loginErrorMsg && (
-                  <span style={{ color: "red" }}>{loginErrorMsg}</span>
-                )}
-              </Form>
-            </DropdownButton>
+            <li className="nav-item">
+              <a className="nav-link" href="/agentportal">
+                Agent Login
+              </a>
+            </li>
           </ul>
         </div>
       </div>

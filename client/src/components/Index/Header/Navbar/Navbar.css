@@ -3,6 +3,10 @@
     width: 100% !important;
 }
 
+.navbar-logo {
+    width: 50px !important;
+}
+
 .navbar-brand,
 .nav-link {
     font-size: 1.2em;
