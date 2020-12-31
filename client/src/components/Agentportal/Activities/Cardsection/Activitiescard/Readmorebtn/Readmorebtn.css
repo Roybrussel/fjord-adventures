@@ -1,0 +1,20 @@
+.activity-img {
+    height: 12em;
+    width: 100%;
+    border-radius: 0.3em;
+    object-fit: cover;
+}
+
+.description-text {
+    text-align: justify;
+}
+
+.readmore-btn {
+    width: 100%;
+    background-color: #1f3c88;
+    border: none;
+}
+
+.readmore-btn:hover {
+    background-color: #ee6f57;
+}

@@ -1,16 +1,18 @@
 import React from "react";
 import "./Activities.css";
 import Header from "../Header/Header";
-import Activitiessection from "../../Index/Activitiessection/Activitiessection";
+import Heading from "./Heading/Heading";
+import Cardsection from "./Cardsection/Cardsection";
 import Footer from "../../Footer/Footer";
 
-const Activities = () => {
+const Activities = (props) => {
   return (
     <div>
       <Header />
-      <div className="activities-container">
-        <Activitiessection />
-      </div>
+      <section id="activities-section" className="container">
+        <Heading />
+        <Cardsection />
+      </section>
       <Footer />
     </div>
   );

@@ -1,0 +1,12 @@
+.add-btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-btn {
+    margin-bottom: 1em;
+}
+
+.form-text {
+    font-size: 0.8em;
+}
