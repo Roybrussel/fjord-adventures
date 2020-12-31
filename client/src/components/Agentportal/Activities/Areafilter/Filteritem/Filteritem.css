@@ -1,3 +1,9 @@
 .filter-item {
     font-size: 1em;
+    background-color: #1f3c88;
+    border: none;
+}
+
+.filter-item:hover {
+    background-color: #ee6f57;
 }

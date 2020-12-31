@@ -9,7 +9,7 @@ const Activities = (props) => {
   return (
     <div>
       <Header />
-      <section id="activities-section" className="container">
+      <section id="activities-section-agent-portal" className="container">
         <Heading />
         <Cardsection />
       </section>

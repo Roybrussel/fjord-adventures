@@ -1,3 +1,9 @@
 .filter-btn {
     margin-left: 1em;
+    background-color: #1f3c88;
+    border-radius: 5px;
+}
+
+.filter-btn:hover {
+    background-color: #ee6f57;
 }

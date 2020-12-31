@@ -32,6 +32,8 @@ const Areafilter = (props) => {
         title="Filter"
         id="dropdown-menu-align-right"
         className="filter-btn"
+        variant="default"
+        textColor="#FFF"
       >
         {listOfActivities.map(createFilterItem)}
       </DropdownButton>

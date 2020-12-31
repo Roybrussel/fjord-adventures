@@ -3,7 +3,7 @@ import "./Cardsection.css";
 import Activitiescard from "./Activitiescard/Activitiescard";
 import Addformbtn from "../Addformbtn/Addformbtn";
 import ActivityService from "../../../../services/activity-service";
-import Areafilter from "../Areafilter/Areafilter";
+// import Areafilter from "../Areafilter/Areafilter";
 
 function createCard(activity) {
   return (
@@ -33,10 +33,7 @@ const Cardsection = (props) => {
 
   return (
     <div className="cards-container">
-      <div className="btn-container">
-        <Addformbtn />
-        <Areafilter />
-      </div>
+      <div className="btn-container">{/* <Areafilter /> */}</div>
       <div className="row">{listOfActivities.map(createCard)}</div>
     </div>
   );
