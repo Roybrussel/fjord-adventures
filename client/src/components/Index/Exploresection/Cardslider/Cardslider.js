@@ -10,11 +10,12 @@ const Cardslider = (props) => {
   const [listOfActivities, setListOfActivities] = useState([]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   const getAllActivities = () => {

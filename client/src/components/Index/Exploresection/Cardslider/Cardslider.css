@@ -6,6 +6,11 @@
 
 .slick-prev:before,
 .slick-next:before {
-    color: black !important;
-    line-height: 0 !important;
+    color: #1f3c88 !important;
+    font-size: 22px !important;
+    opacity: 1 !important;
+}
+
+.slick-arrow {
+    margin-top: 5em !important;
 }
