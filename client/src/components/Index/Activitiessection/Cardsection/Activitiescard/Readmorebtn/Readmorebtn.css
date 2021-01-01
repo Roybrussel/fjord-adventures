@@ -18,3 +18,13 @@
 .readmore-btn:hover {
     background-color: #ee6f57;
 }
+
+.btn-custom {
+    background-color: #1f3c88;
+    color: #FFF;
+}
+
+.btn-custom:hover {
+    background-color: #ee6f57;
+    color: #FFF;
+}
