@@ -32,6 +32,11 @@
 .search-btn {
     width: 12em;
     border-radius: 5em;
+    border-style: none;
     background-color: #ee6f57;
     color: #f6f5f5;
+}
+
+.search-btn:focus {
+    outline-style: none;
 }
