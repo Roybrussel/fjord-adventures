@@ -19,10 +19,8 @@ const Cardslider = (props) => {
 
   useEffect(getAllActivities, []);
 
-  function createCard(currentValue) {
-    return (
-      <Explorecard image={`images/${currentValue}.jpg`} title={currentValue} />
-    );
+  function createCard(area) {
+    return <Explorecard image={`images/${area}.jpg`} title={area} />;
   }
 
   const uniqueListOfActivities = [
