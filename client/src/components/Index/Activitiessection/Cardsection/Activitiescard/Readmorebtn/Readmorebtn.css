@@ -19,6 +19,14 @@
     background-color: #ee6f57;
 }
 
+.readmore-btn:focus,
+.readmore-btn:active {
+    background-color: #1f3c88;
+    outline: none !important;
+    border-style: none !important;
+    box-shadow: none !important;
+}
+
 .btn-custom {
     background-color: #1f3c88;
     color: #FFF;

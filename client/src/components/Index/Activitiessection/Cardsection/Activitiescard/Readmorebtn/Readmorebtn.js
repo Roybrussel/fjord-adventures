@@ -85,7 +85,6 @@ const Readmorebtn = (props) => {
           id={props.id}
           onHide={() => {
             setModalShow(false);
-            window.location.reload();
           }}
         />
       </>
