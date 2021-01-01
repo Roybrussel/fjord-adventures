@@ -3,10 +3,6 @@ import "./Cardslider.css";
 import Explorecard from "./Explorecard/Explorecard";
 import ActivityService from "../../../../services/activity-service";
 
-function createCard(area) {
-  return <Explorecard image={`images/${area.area}.jpg`} title={area.area} />;
-}
-
 const Cardslider = (props) => {
   const [listOfActivities, setListOfActivities] = useState([]);
 
@@ -22,9 +18,20 @@ const Cardslider = (props) => {
   };
 
   useEffect(getAllActivities, []);
+
+  function createCard(currentValue) {
+    return (
+      <Explorecard image={`images/${currentValue}.jpg`} title={currentValue} />
+    );
+  }
+
+  const uniqueListOfActivities = [
+    ...new Set(listOfActivities.map((x) => x.area)),
+  ];
+
   return (
     <div className="cards-container">
-      <div className="row">{listOfActivities.map(createCard)}</div>
+      <div className="row">{uniqueListOfActivities.map(createCard)}</div>
     </div>
   );
 };
