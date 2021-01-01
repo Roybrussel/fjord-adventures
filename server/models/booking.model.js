@@ -1,15 +1,18 @@
 const { Schema, model } = require("mongoose");
-const User = require("./user.model");
 
-const myBookingSchema = new Schema(
+const bookingSchema = new Schema(
   {
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
     bookingNumber: Number,
-    description: String,
-    activities: [{ type: Schema.Types.ObjectId, ref: "Task" }],
+    totalPrice: Number,
+    activities: [{ type: Schema.Types.ObjectId, ref: "bookedActivity" }],
+    confirmed: Boolean,
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = model("booking", myBookingSchema);
+module.exports = model("booking", bookingSchema);

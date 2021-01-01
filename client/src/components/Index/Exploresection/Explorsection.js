@@ -5,9 +5,13 @@ import Cardslider from "./Cardslider/Cardslider";
 
 const Exploresection = (props) => {
   return (
-    <section id="explore-section" className="container">
-      <Heading />
-      <Cardslider />
+    <section id="explore-section">
+      <div className="container">
+        <Heading />
+      </div>
+      <div className="cardslider-container">
+        <Cardslider />
+      </div>
     </section>
   );
 };

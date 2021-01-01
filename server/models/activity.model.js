@@ -7,12 +7,6 @@ const activitySchema = new Schema(
     area: { type: String, required: true },
     price: { type: Number, required: true },
     imageUrl: { type: String, required: true },
-    bookings: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "booking",
-      },
-    ],
   },
   {
     timestamps: true,

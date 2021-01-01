@@ -28,6 +28,23 @@ function MyVerticallyCenteredModal(props) {
   // useEffect to mimic componentDidMount(). It'll get run anytime there is any change to the props.match.params value coming in.
   useEffect(getSingleActivity, [id]);
 
+  //   function to delete the project
+  const deleteActivity = () => {
+    // get the 'id' from url via 'props.match.params' object
+    const { id } = props;
+
+    const service = new ActivityService();
+
+    // api call to the delete route in the backend
+    service
+      .removeActivity(id)
+      .then(() => {
+        // after submitting the form, 'props.history.push' can be used to redirect to 'projects'
+        props.onHide();
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="add-btn">
       <Modal
@@ -61,6 +78,12 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Footer>
           <Button variant="primary" type="submit">
             Book
+          </Button>
+          <Button variant="primary" type="submit">
+            Edit
+          </Button>
+          <Button variant="danger" onClick={() => deleteActivity()}>
+            Delete
           </Button>
         </Modal.Footer>
       </Modal>
