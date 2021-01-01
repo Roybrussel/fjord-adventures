@@ -24,6 +24,11 @@ const Navbar = (props) => {
         <div className="navbar-nav">
           <ul className="navbar-nav">
             <li className="nav-item">
+              <a className="nav-link" href="/">
+                Fjord Adventures
+              </a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="#explore-section">
                 Explore
               </a>
