@@ -11,11 +11,9 @@ const Searchbar = (props) => {
         <div className="date search-option">
           <p>DATE</p>
         </div>
-        <div className="search-btn search-option">
-          <p>
-            <i className="fas fa-search"></i> SEARCH
-          </p>
-        </div>
+        <button className="search-btn search-option">
+          <i className="fas fa-search"></i> SEARCH
+        </button>
       </div>
     </div>
   );
