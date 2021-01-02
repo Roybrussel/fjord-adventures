@@ -59,7 +59,7 @@ function MyVerticallyCenteredModal(props) {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" type="submit">
+          <Button variant="custom" type="submit">
             Book
           </Button>
         </Modal.Footer>
@@ -85,7 +85,6 @@ const Readmorebtn = (props) => {
           id={props.id}
           onHide={() => {
             setModalShow(false);
-            window.location.reload();
           }}
         />
       </>
