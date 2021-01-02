@@ -1,8 +1,8 @@
 # Fjord Adventures
 
-Project #3 of Ironhack Bootcamp
+Project #3 of the Ironhack Web Development Bootcamp
 
-Fjord Adventures is a single-page Web application using the MERN stack (MongoDB, Express, React & Node.js).
+Fjord Adventures is the final project of the Ironhack Bootcamp and is a single-page Web application thats was built with using the MERN stack (MongoDB, Express, React & Node.js).
 
 Ideas for further development:
 
