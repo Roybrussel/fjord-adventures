@@ -12,8 +12,6 @@ function MyVerticallyCenteredModal(props) {
   const { id } = props;
 
   const getSingleActivity = () => {
-    // get the 'id' from url via 'props.match.params' object
-
     const service = new ActivityService();
 
     // api call to the server to retrieve a single object
@@ -76,10 +74,7 @@ function MyVerticallyCenteredModal(props) {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" type="submit">
-            Book
-          </Button>
-          <Button variant="primary" type="submit">
+          <Button variant="custom" type="submit">
             Edit
           </Button>
           <Button variant="danger" onClick={() => deleteActivity()}>
