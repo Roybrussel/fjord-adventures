@@ -1,0 +1,27 @@
+.portal-container {
+    height: 182px;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.agentlogin-form {
+    padding-top: 0.6em;
+    width: 25%;
+}
+
+.btn-custom-login {
+    margin-bottom: 1em;
+    background-color: #1f3c88;
+    border: none;
+    color: #FFF;
+    width: 100%;
+}
+
+.btn-custom-login:hover {
+    background-color: #ee6f57;
+    color: #FFF;
+}

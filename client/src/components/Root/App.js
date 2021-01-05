@@ -5,6 +5,7 @@ import Index from "../Index/Index";
 import Agentportal from "../Agentportal/Agentportal";
 import Activities from "../Agentportal/Activities/Activities";
 import Addagent from "../Agentportal/Addagent/Addagent";
+import Agentlogin from "../Agentportal/Agentlogin/Agentlogin";
 // import Protectedroute from "../Protectedroute/Protectedroute";
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/activities" component={Activities} />
           <Route path="/activities/:id" />
           <Route exact path="/agentportal" component={Agentportal} />
+          <Route exact path="/agentlogin" component={Agentlogin} />
           <Route path="/add-agent" component={Addagent} />
           <Index />
         </Switch>

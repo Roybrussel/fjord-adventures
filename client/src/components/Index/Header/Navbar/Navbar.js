@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = (props) => {
@@ -44,9 +45,9 @@ const Navbar = (props) => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/agentportal">
+              <Link className="nav-link" to="/agentlogin">
                 Agent Login
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
