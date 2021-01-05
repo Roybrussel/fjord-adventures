@@ -23,7 +23,7 @@ const Loginform = (props) => {
       .login(email, password)
       .then((response) => {
         setLoginState(initialState);
-        props.getUser(response);
+        props.history.push("/agentportal");
       })
       .catch((error) => {
         const { message } = error.response.data;

@@ -11,6 +11,7 @@ function createCard(activity) {
       title={activity.title}
       description={`${activity.description.slice(0, 185)}... `}
       id={activity._id}
+      key={activity._id}
     />
   );
 }
