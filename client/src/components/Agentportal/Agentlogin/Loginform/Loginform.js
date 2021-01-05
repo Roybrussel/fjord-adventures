@@ -40,7 +40,7 @@ const Loginform = (props) => {
 
   return (
     <div className="container portal-container">
-      <div className="form-container">
+      <div className="login-form-container">
         <div className="agentlogin-form">
           <Form onSubmit={handleFormSubmit}>
             <Form.Group>
@@ -74,6 +74,9 @@ const Loginform = (props) => {
               Login
             </Button>
           </Form>
+          {loginErrorMsg && (
+            <span style={{ color: "red" }}>{loginErrorMsg}</span>
+          )}
         </div>
       </div>
     </div>
