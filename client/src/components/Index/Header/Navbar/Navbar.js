@@ -44,7 +44,7 @@ const Navbar = (props) => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/agentportal">
+              <a className="nav-link" href="/agentlogin">
                 Agent Login
               </a>
             </li>
