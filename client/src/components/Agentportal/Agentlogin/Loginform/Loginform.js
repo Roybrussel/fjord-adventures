@@ -23,7 +23,7 @@ const Loginform = (props) => {
       .then((response) => {
         console.log("Login:", response);
         setLoginState(initialState);
-        localStorage.setItem(`user`, JSON.stringify(response));
+        localStorage.setItem("agent", JSON.stringify(response));
         props.getUser(response);
         props.history.push("/agentportal");
       })

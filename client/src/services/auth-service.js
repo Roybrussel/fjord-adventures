@@ -31,7 +31,7 @@ class AuthService {
   // Method to use for logging our user out
   logout = () => {
     return this.service
-      .post("/agentlogin", {})
+      .post("/agentportal", {})
       .then((response) => response.data);
   };
 }
