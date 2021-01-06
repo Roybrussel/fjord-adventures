@@ -23,6 +23,11 @@ class AuthService {
       .then((response) => response.data);
   };
 
+  // Method to use to see if user is authenticated
+  isAuthenticated = () => {
+    return this.service.get("/loggedin").then((response) => response.data);
+  };
+
   // Method to use for logging our user out
   logout = () => {
     return this.service.post("/logout", {}).then((response) => response.data);
