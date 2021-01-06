@@ -19,20 +19,13 @@ class AuthService {
   // Method to use in our Login component
   login = (email, password) => {
     return this.service
-      .post("/agentlogin", { email, password })
+      .post("/login", { email, password })
       .then((response) => response.data);
-  };
-
-  // Method to use to see if user is authenticated
-  isAuthenticated = () => {
-    return this.service.get("/agentportal").then((response) => response.data);
   };
 
   // Method to use for logging our user out
   logout = () => {
-    return this.service
-      .post("/agentportal", {})
-      .then((response) => response.data);
+    return this.service.post("/logout", {}).then((response) => response.data);
   };
 }
 
