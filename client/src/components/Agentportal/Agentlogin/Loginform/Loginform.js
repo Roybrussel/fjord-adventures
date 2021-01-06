@@ -10,7 +10,6 @@ const initialState = { email: "", password: "" };
 const Loginform = (props) => {
   const [loginState, setLoginState] = useState(initialState);
   const [loginErrorMsg, setLoginErrorMsg] = useState("");
-
   const service = new AuthService();
 
   // Function to handle form submit in the input fields
@@ -22,13 +21,15 @@ const Loginform = (props) => {
     service
       .login(email, password)
       .then((response) => {
+        console.log("Login:", response);
         setLoginState(initialState);
+        localStorage.setItem(`user`, JSON.stringify(response));
+        props.getUser(response);
         props.history.push("/agentportal");
       })
       .catch((error) => {
         const { message } = error.response.data;
         setLoginErrorMsg(message);
-        console.log(error);
       });
   };
 
@@ -50,6 +51,7 @@ const Loginform = (props) => {
                 name="email"
                 value={loginState.email}
                 onChange={handleChange}
+                value={setLoginState.email}
                 placeholder="Your email address"
                 required
               />
@@ -61,6 +63,7 @@ const Loginform = (props) => {
                 name="password"
                 value={loginState.password}
                 onChange={handleChange}
+                value={setLoginState.password}
                 placeholder="Your password"
                 required
               />

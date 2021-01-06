@@ -19,7 +19,7 @@ class AuthService {
   // Method to use in our Login component
   login = (email, password) => {
     return this.service
-      .post("/", { email, password })
+      .post("/agentlogin", { email, password })
       .then((response) => response.data);
   };
 
@@ -31,7 +31,7 @@ class AuthService {
   // Method to use for logging our user out
   logout = () => {
     return this.service
-      .post("/agentportal", {})
+      .post("/agentlogin", {})
       .then((response) => response.data);
   };
 }
