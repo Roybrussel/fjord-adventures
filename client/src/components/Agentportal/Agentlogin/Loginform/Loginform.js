@@ -49,7 +49,6 @@ const Loginform = (props) => {
               <Form.Control
                 type="text"
                 name="email"
-                value={loginState.email}
                 onChange={handleChange}
                 value={setLoginState.email}
                 placeholder="Your email address"
@@ -61,7 +60,6 @@ const Loginform = (props) => {
               <Form.Control
                 type="password"
                 name="password"
-                value={loginState.password}
                 onChange={handleChange}
                 value={setLoginState.password}
                 placeholder="Your password"
