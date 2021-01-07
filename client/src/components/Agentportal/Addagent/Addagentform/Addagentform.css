@@ -4,6 +4,19 @@
 }
 
 .add-agent-form {
-    width: 50%;
-    padding-top: 6em;
+    width: 25%;
+    padding-top: 0.6em;
+}
+
+.btn-custom-add-agent {
+    margin-bottom: 1em;
+    background-color: #1f3c88;
+    border: none;
+    color: #FFF;
+    width: 100%;
+}
+
+.btn-custom-add-agent:hover {
+    background-color: #ee6f57;
+    color: #FFF;
 }

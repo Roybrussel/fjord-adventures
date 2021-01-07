@@ -81,10 +81,11 @@ const Addagentform = (props) => {
               name="password"
               value={regForm.password}
               onChange={handleChange}
+              placeholder="Enter password"
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit" closeButton>
+          <Button variant="custom-add-agent" type="submit" closeButton>
             Submit
           </Button>
         </Form>
