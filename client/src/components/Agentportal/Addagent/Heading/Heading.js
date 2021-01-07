@@ -3,8 +3,8 @@ import "./Heading.css";
 
 const Heading = (props) => {
   return (
-    <div className="container login-heading">
-      <h1>AGENT LOGIN</h1>
+    <div className="container add-agent-heading">
+      <h1>ADD AGENT</h1>
       <hr />
     </div>
   );
