@@ -27,7 +27,7 @@ class App extends Component {
           <Route path="/activities" component={Activities} />
           <Route path="/activities/:id" />
           <Route exact path="/agentportal" component={Agentportal} />
-          <Route exact path="/agentlogin" component={Agentlogin} />
+          <Route path="/login" component={Agentlogin} />
           <Route path="/add-agent" component={Addagent} />
           <Index />
         </Switch>
