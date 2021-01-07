@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import AuthService from "../../../../services/auth-service";
 import "./Loginform.css";
@@ -66,14 +67,17 @@ const Loginform = (props) => {
                 required
               />
             </Form.Group>
-            <Button
-              variant="custom-login"
-              type="submit"
-              value="Login"
-              closeButton
-            >
-              Login
-            </Button>
+            <Link to="/agentportal">
+              {" "}
+              <Button
+                variant="custom-login"
+                type="submit"
+                value="Login"
+                closeButton
+              >
+                Login
+              </Button>
+            </Link>
           </Form>
           {loginErrorMsg && (
             <span style={{ color: "red" }}>{loginErrorMsg}</span>
