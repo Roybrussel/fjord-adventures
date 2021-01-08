@@ -4,6 +4,8 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import DatePicker from "react-date-picker";
 
 import ActivityService from "../../../../../../services/activity-service";
@@ -52,21 +54,36 @@ function MyVerticallyCenteredModal(props) {
             <p className="description-text">{details.description}</p>
           </Form.Group>
           <Form.Group>
-            <h6>Area</h6>
-            <p>{details.area}</p>
-          </Form.Group>
-          <Form.Group>
-            <h6>Price</h6>
-            <p>€ {details.price},- per person</p>
-          </Form.Group>
-          <Form.Group>
-            <h6>Select date</h6>
-            <DatePicker
-              onChange={onChange}
-              value={value}
-              minDate={new Date(2021, 5, 1)}
-              maxDate={new Date(2021, 7, 31)}
-            />
+            <Row>
+              <Col>
+                <h6>Area</h6>
+                <p>{details.area}</p>
+                <h6>Price</h6>
+                <p>€ {details.price},- per person</p>
+              </Col>
+              <Col>
+                <h6>Select date</h6>
+                <DatePicker
+                  onChange={onChange}
+                  value={value}
+                  minDate={new Date(2021, 5, 1)}
+                  maxDate={new Date(2021, 7, 31)}
+                />
+                <h6 className="number-of-persons-heading">No. of persons</h6>
+                <select id="dropdown" className="persons-dropdown">
+                  <option value="1">1 person</option>
+                  <option value="2">2 persons</option>
+                  <option value="3">3 persons</option>
+                  <option value="4">4 persons</option>
+                  <option value="5">5 persons</option>
+                  <option value="6">6 persons</option>
+                  <option value="7">7 persons</option>
+                  <option value="8">8 persons</option>
+                  <option value="9">9 persons</option>
+                </select>
+              </Col>
+              <Col></Col>
+            </Row>
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>

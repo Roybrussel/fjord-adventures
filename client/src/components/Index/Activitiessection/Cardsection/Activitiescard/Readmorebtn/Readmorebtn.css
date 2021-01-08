@@ -36,3 +36,13 @@
     background-color: #ee6f57;
     color: #FFF;
 }
+
+.react-date-picker {
+    margin-bottom: 0.7em !important;
+}
+
+.persons-dropdown {
+    width: 66%;
+    height: 1.8em;
+    -webkit-border-radius: 0px;
+}
