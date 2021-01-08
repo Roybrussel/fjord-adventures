@@ -32,6 +32,16 @@ function MyVerticallyCenteredModal(props) {
   // useEffect to mimic componentDidMount(). It'll get run anytime there is any change to the props.match.params value coming in.
   useEffect(getSingleActivity, [id]);
 
+  // function calculateTotal() {
+  //   var activityPrice = details.price;
+  //   var numberOfPersons = document.getElementById("dropdown").value;
+  //   var totalPrice = activityPrice * numberOfPersons;
+  //   document.getElementsByClassName(
+  //     "total-price"
+  //   ).textContent = `€ ${totalPrice.toString()},-`;
+  //   console.log(`€ ${totalPrice.toString()},-`);
+  // }
+
   return (
     <div className="add-btn">
       <Modal
@@ -70,7 +80,11 @@ function MyVerticallyCenteredModal(props) {
                   maxDate={new Date(2021, 7, 31)}
                 />
                 <h6 className="number-of-persons-heading">No. of persons</h6>
-                <select id="dropdown" className="persons-dropdown">
+                <select
+                  id="dropdown"
+                  className="persons-dropdown"
+                  // onChange={calculateTotal}
+                >
                   <option value="1">1 person</option>
                   <option value="2">2 persons</option>
                   <option value="3">3 persons</option>
@@ -82,7 +96,10 @@ function MyVerticallyCenteredModal(props) {
                   <option value="9">9 persons</option>
                 </select>
               </Col>
-              <Col></Col>
+              <Col>
+                {/* <h6>TOTAL PRICE</h6>
+                <p className="total-price"></p> */}
+              </Col>
             </Row>
           </Form.Group>
         </Modal.Body>
