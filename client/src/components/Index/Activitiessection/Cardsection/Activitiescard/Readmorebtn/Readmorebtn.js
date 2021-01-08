@@ -4,10 +4,12 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
+import DatePicker from "react-date-picker";
 
 import ActivityService from "../../../../../../services/activity-service";
 
 function MyVerticallyCenteredModal(props) {
+  const [value, onChange] = useState(new Date());
   const [details, setDetails] = useState({});
   const { id } = props;
 
@@ -56,6 +58,15 @@ function MyVerticallyCenteredModal(props) {
           <Form.Group>
             <h6>Price</h6>
             <p>€ {details.price},- per person</p>
+          </Form.Group>
+          <Form.Group>
+            <h6>Select date</h6>
+            <DatePicker
+              onChange={onChange}
+              value={value}
+              minDate={new Date(2021, 5, 1)}
+              maxDate={new Date(2021, 7, 31)}
+            />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
