@@ -13,7 +13,7 @@ import ActivityService from "../../../../../../services/activity-service";
 function MyVerticallyCenteredModal(props) {
   const [value, onChange] = useState(new Date());
   const [details, setDetails] = useState({});
-  const [price, setPrice] = useState(details.price)
+  const [price, setPrice] = useState(0)
   const { id } = props;
 
   const getSingleActivity = () => {
@@ -83,7 +83,6 @@ function MyVerticallyCenteredModal(props) {
                   className="persons-dropdown"
                   onChange={calculateTotal}
                 >
-                  <option value="-">-</option>
                   <option value="1">1 person</option>
                   <option value="2">2 persons</option>
                   <option value="3">3 persons</option>

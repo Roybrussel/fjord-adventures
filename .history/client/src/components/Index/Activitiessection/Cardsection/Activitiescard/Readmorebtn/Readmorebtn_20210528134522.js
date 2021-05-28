@@ -13,7 +13,6 @@ import ActivityService from "../../../../../../services/activity-service";
 function MyVerticallyCenteredModal(props) {
   const [value, onChange] = useState(new Date());
   const [details, setDetails] = useState({});
-  const [price, setPrice] = useState(details.price)
   const { id } = props;
 
   const getSingleActivity = () => {
@@ -33,12 +32,15 @@ function MyVerticallyCenteredModal(props) {
   // useEffect to mimic componentDidMount(). It'll get run anytime there is any change to the props.match.params value coming in.
   useEffect(getSingleActivity, [id]);
 
-  function calculateTotal() {
-    var activityPrice = details.price;
-    var numberOfPersons = document.getElementById("dropdown").value;
-    var totalPrice = activityPrice * numberOfPersons;
-    setPrice(totalPrice);
-  }
+  // function calculateTotal() {
+  //   var activityPrice = details.price;
+  //   var numberOfPersons = document.getElementById("dropdown").value;
+  //   var totalPrice = activityPrice * numberOfPersons;
+  //   document.getElementsByClassName(
+  //     "total-price"
+  //   ).textContent = `€ ${totalPrice.toString()},-`;
+  //   console.log(`€ ${totalPrice.toString()},-`);
+  // }
 
   return (
     <div className="add-btn">
@@ -81,9 +83,8 @@ function MyVerticallyCenteredModal(props) {
                 <select
                   id="dropdown"
                   className="persons-dropdown"
-                  onChange={calculateTotal}
+                  // onChange={calculateTotal}
                 >
-                  <option value="-">-</option>
                   <option value="1">1 person</option>
                   <option value="2">2 persons</option>
                   <option value="3">3 persons</option>
@@ -97,7 +98,7 @@ function MyVerticallyCenteredModal(props) {
               </Col>
               <Col>
                 <h6>TOTAL PRICE</h6>
-                <p className="total-price">€ {price},-</p>
+                <p className="total-price"></p>
               </Col>
             </Row>
           </Form.Group>

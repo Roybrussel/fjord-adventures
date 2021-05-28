@@ -98,6 +98,7 @@ function MyVerticallyCenteredModal(props) {
               <Col>
                 <h6>TOTAL PRICE</h6>
                 <p className="total-price">€ {price},-</p>
+                
               </Col>
             </Row>
           </Form.Group>

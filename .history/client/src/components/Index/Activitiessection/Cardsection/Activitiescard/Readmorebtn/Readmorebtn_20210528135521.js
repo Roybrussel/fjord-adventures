@@ -83,7 +83,7 @@ function MyVerticallyCenteredModal(props) {
                   className="persons-dropdown"
                   onChange={calculateTotal}
                 >
-                  <option value="-">-</option>
+                  <option value="1">-</option>
                   <option value="1">1 person</option>
                   <option value="2">2 persons</option>
                   <option value="3">3 persons</option>

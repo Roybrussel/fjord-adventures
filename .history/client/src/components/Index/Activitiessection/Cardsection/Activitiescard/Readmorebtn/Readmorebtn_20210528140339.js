@@ -40,6 +40,14 @@ function MyVerticallyCenteredModal(props) {
     setPrice(totalPrice);
   }
 
+  function showPrice() {
+    if(!document.getElementById("dropdown").value === "-") {
+      return <p className="total-price">€ {price},-</p>
+    } else{
+      return
+    }
+  }
+
   return (
     <div className="add-btn">
       <Modal
@@ -98,6 +106,7 @@ function MyVerticallyCenteredModal(props) {
               <Col>
                 <h6>TOTAL PRICE</h6>
                 <p className="total-price">€ {price},-</p>
+                
               </Col>
             </Row>
           </Form.Group>
